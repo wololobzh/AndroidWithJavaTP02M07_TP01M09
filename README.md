@@ -1,5 +1,5 @@
-# AndroidWithJavaTP02M07
-Retrofit + RecyclerView + AsyncTask + Menu
+# AndroidWithJavaTP02M07_TP01M09
+Retrofit + RecyclerView + AsyncTask + Menu + Room
 
 # Rappel sur l'attribut android:lauchMode
 

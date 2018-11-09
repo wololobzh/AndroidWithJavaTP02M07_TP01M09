@@ -1,8 +1,5 @@
 package fr.acos.tp01module07.adapter;
 
-/**
- * Created by acoss on 13/09/2018.
- */
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,37 +7,34 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
-import fr.acos.tp01module07.R;
-import fr.acos.tp01module07.model.Marque;
+import fr.acos.tp01module07.model.Modele;
+import static fr.acos.tp01module07.R.*;
 
 /**
  * Cette classe permet de créer les views du recycler view.
  *
- * MarqueAdapter.ViewHolder est définit à l’intérieur de la classe MarqueAdapter
+ * ModeleAdapter.ViewHolder est définit à l’intérieur de la classe ModeleAdapter
  */
-public class MarqueAdapter extends RecyclerView.Adapter<MarqueAdapter.ViewHolder> {
+public class ModeleAdapter extends RecyclerView.Adapter<ModeleAdapter.ViewHolder> {
 
     /**
      * Permet de stocker les données à afficher.
      */
-    private ArrayList<Marque> marques;
 
-    /**
-     * Variable représentant l'activité utilisatrice de l'adapter.
-     */
+    private ArrayList<Modele> modeles;
+
     private OnClicSurUnItem action;
 
     /**
      * Fournit une référence aux vues pour chaque élément de données
      */
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
-    {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         // Chaque élément contient seulement une TextView
         TextView mTextView;
 
         ViewHolder(View v) {
             super(v);
-            mTextView = v.findViewById(R.id.tv_marque);
+            mTextView = v.findViewById(id.tv_modele);
             v.setOnClickListener(this);
         }
 
@@ -49,7 +43,7 @@ public class MarqueAdapter extends RecyclerView.Adapter<MarqueAdapter.ViewHolder
          */
         @Override
         public void onClick(View v) {
-            action.onInteraction(marques.get(ViewHolder.this.getAdapterPosition()));
+            action.onInteraction(modeles.get(ModeleAdapter.ViewHolder.this.getAdapterPosition()));
         }
     }
 
@@ -61,28 +55,28 @@ public class MarqueAdapter extends RecyclerView.Adapter<MarqueAdapter.ViewHolder
     }
 
     /**
-     *  Constructeur qui attend les données à afficher en paramètre
+     * Constructeur qui attend les données à afficher en paramètre
      **/
-    public MarqueAdapter(List<Marque> myDataset, OnClicSurUnItem activite) {
-        marques = (ArrayList<Marque>)myDataset;
+    public ModeleAdapter(List<Modele> myDataset, ModeleAdapter.OnClicSurUnItem activite) {
+        modeles = (ArrayList<Modele>) myDataset;
         action = activite;
     }
 
     /**
-     *  Créée un ViewHolder qui représente le fichier my_text_view.xml
+     * Créée un ViewHolder qui représente le fichier my_text_view.xml
      **/
     @Override
-    public MarqueAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.ligne_marque, parent, false);
-        return new ViewHolder(v);
+    public ModeleAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(layout.ligne_modele, parent, false);
+        return new ModeleAdapter.ViewHolder(v);
     }
 
     /**
      * Remplie la vue représentant une ligne
      */
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.mTextView.setText(marques.get(position).getLibelle());
+    public void onBindViewHolder(ModeleAdapter.ViewHolder holder, int position) {
+        holder.mTextView.setText(modeles.get(position).getDesignation());
     }
 
     /**
@@ -92,6 +86,6 @@ public class MarqueAdapter extends RecyclerView.Adapter<MarqueAdapter.ViewHolder
      */
     @Override
     public int getItemCount() {
-        return marques.size();
+        return modeles.size();
     }
 }

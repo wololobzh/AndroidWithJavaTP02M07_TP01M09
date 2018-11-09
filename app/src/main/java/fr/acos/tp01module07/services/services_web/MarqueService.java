@@ -1,6 +1,6 @@
-package fr.acos.tp01module07.services_web;
+package fr.acos.tp01module07.services.services_web;
 
-import fr.acos.tp01module07.services_web.bo.InfoMarque;
+import fr.acos.tp01module07.services.services_web.bo.InfoMarque;
 import retrofit2.Call;
 import retrofit2.http.GET;
 

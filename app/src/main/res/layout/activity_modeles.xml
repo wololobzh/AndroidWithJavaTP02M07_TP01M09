@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fr.acos.tp01module07.activities.MainActivity">
+    tools:context=".activities.ModelesActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_marques"
+        android:id="@+id/recycler_modeles"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical" />

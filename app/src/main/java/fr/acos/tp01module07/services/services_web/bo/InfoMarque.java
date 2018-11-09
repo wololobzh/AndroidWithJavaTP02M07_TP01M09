@@ -1,4 +1,4 @@
-package fr.acos.tp01module07.services_web.bo;
+package fr.acos.tp01module07.services.services_web.bo;
 
 import java.util.List;
 
